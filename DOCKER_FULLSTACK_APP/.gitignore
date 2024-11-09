@@ -1,0 +1,25 @@
+# OSまたはエディタの一時ファイル
+.DS_Store
+Thumbs.db
+*.log
+
+# コンパイル済みコード
+*.class
+*.pyc
+*.o
+*.out
+*.obj
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 環境設定ファイル
+.env
+
+# mysql
+/db/data/
