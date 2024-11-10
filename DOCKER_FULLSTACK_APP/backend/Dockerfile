@@ -12,6 +12,9 @@ COPY . .
 # package インストール
 RUN poetry install --no-root
 
+# エントリーポイントとして指定
+ENTRYPOINT ["/backend_src/entrypoint.sh"]
+
 # アプリケーションを実行
 ## app(WORKDIR)/app/main.py の場合、app.main 表記
 CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

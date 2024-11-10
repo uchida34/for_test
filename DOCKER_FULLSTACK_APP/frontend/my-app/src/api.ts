@@ -10,16 +10,20 @@ const api = axios.create({
   },
 })
 
-export type TestData = {
-  message: string
+export type UserData = {
+  name: string
+  email: string
+  password: string
 }
 
-export const getData = async (): Promise<TestData | undefined> => {
+export const createUser = async (
+  userData: UserData
+): Promise<UserData | undefined> => {
   try {
-    const response = await api.get<TestData>("/")
+    const response = await api.post<UserData>("/users/create", userData)
     return response.data
   } catch (e) {
-    console.error("Failed to fetch data:", e)
+    console.error("Failed to create user:", e)
     return undefined
   }
 }

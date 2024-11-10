@@ -8,9 +8,11 @@ services:
       - "8000:8000"
     # ${local の ディレクトリ}:${Docker の WORKDIR}
     volumes:
-      - ./backend/app:/backend_src/app
+      - ./backend:/backend_src/
     depends_on:
       - db
+    environment:
+      DATABASE_URL: mysql+pymysql://hoger:hoge@db:3306/hoge_db
 
   frontend:
     build:
@@ -30,14 +32,12 @@ services:
     image: mysql:8.0
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: your_root_password
-      MYSQL_DATABASE: your_database_name
-      MYSQL_USER: your_user
-      MYSQL_PASSWORD: your_password
+      MYSQL_ROOT_PASSWORD: hoge
+      MYSQL_DATABASE: hoge_db
+      MYSQL_USER: hoger
+      MYSQL_PASSWORD: hoge
     ports:
       - "3306:3306"
-    volumes:
-      - ./db/data:/var/lib/mysql
 
 networks:
   default:

@@ -1,17 +1,6 @@
-import { useState } from "react"
-import { getData, TestData } from "./api"
+import CreateUserButton from "./components/create-user-button"
 
 function App() {
-  const [data, setData] = useState<TestData>()
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleClickButton = async () => {
-    setIsLoading(true)
-    const data = await getData()
-    setIsLoading(false)
-    setData(data)
-  }
-
   return (
     <div className="App">
       <header
@@ -24,10 +13,7 @@ function App() {
           flexDirection: "column",
         }}
       >
-        <button onClick={handleClickButton} style={{ padding: "2em" }}>
-          APIコール
-        </button>
-        {isLoading ? <>loading...</> : <>{data?.message}</>}
+        <CreateUserButton />
       </header>
     </div>
   )
