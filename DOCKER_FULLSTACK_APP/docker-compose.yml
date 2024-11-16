@@ -13,6 +13,8 @@ services:
       - db
     environment:
       DATABASE_URL: mysql+pymysql://hoger:hoge@db:3306/hoge_db
+      DB_HOST: db
+      DB_PORT: 3306
 
   frontend:
     build:

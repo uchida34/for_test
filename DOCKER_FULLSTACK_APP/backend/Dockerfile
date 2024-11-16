@@ -1,6 +1,12 @@
 # Dockerfileの例
 FROM python:3.13-slim
 
+# DBチェックに必要なツールをインストール
+RUN apt-get update && apt-get install -y \
+    default-mysql-client \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # 作業ディレクトリを設定
 WORKDIR /backend_src
 
