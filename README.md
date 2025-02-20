@@ -3,15 +3,9 @@
 ## APPの説明
 
 - for_test 
-  - DOCKER_FULLSTACK_APP
+  - DOCKER_REACT_FASTAPI_APP
     - front: react.js, back: FastApi
-  - DOCKER_NEXTJS_APP
+  - DOCKER_NEXTJS_FASTAPI_APP
     - front: next.js, back: FastApi
-  - DOCKER_TYPESCRIPTS_APP
-    - front: next.js, back: TypeScript(express)
-
-
-docker
-
-
-テスト用コード置き場
+  - NEXTJS_APP
+    - front: next.js, back: next.js
