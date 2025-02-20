@@ -1,5 +1,5 @@
 # Dockerfileの例
-FROM python:3.13-slim
+FROM python:3.13.2
 
 # 作業ディレクトリを設定
 WORKDIR /backend_src
